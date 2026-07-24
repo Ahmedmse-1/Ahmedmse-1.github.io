@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Makes the website responsive on phones -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <!-- Change this later to your full name -->
-  <title>Your Name | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Ahmed M. Elgammal, Communications and IT Engineer."
+  >
+
+  <title>Ahmed M. Elgammal | Portfolio</title>
 
   <style>
     /* =========================
-       1. BASIC RESET
+       BASIC SETTINGS
     ========================== */
 
     * {
@@ -26,9 +32,9 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b1120;
-      color: #e5e7eb;
-      line-height: 1.6;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.7;
     }
 
     a {
@@ -36,358 +42,294 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* =========================
-       2. REUSABLE STYLES
+       REUSABLE STYLES
     ========================== */
 
     .container {
       width: min(1100px, 90%);
-      margin: auto;
+      margin: 0 auto;
     }
 
     section {
       padding: 90px 0;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 75px;
     }
 
     .section-label {
-      color: #38bdf8;
-      font-size: 0.85rem;
-      font-weight: bold;
+      margin-bottom: 8px;
+      color: #1d4ed8;
+      font-size: 0.82rem;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 8px;
     }
 
     .section-title {
-      color: #ffffff;
+      margin-bottom: 16px;
+      color: #0f172a;
       font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 15px;
+      line-height: 1.2;
     }
 
     .section-description {
-      color: #94a3b8;
-      max-width: 650px;
-      margin-bottom: 40px;
+      max-width: 680px;
+      margin-bottom: 38px;
+      color: #64748b;
+      font-size: 1rem;
     }
 
     .button {
       display: inline-block;
       padding: 12px 22px;
       border-radius: 8px;
-      font-weight: bold;
-      transition: 0.25s ease;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
     }
 
     .button-primary {
-      background-color: #38bdf8;
-      color: #082f49;
+      background-color: #1e3a8a;
+      color: #ffffff;
     }
 
     .button-primary:hover {
-      background-color: #7dd3fc;
-      transform: translateY(-2px);
+      background-color: #1d4ed8;
     }
 
     .button-secondary {
-      border: 1px solid #475569;
-      color: #e5e7eb;
+      border: 1px solid #cbd5e1;
+      background-color: #ffffff;
+      color: #1e3a8a;
     }
 
     .button-secondary:hover {
-      border-color: #38bdf8;
-      color: #38bdf8;
-      transform: translateY(-2px);
+      border-color: #1e3a8a;
     }
 
     .card {
-      background-color: #111827;
-      border: 1px solid #1e293b;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 14px;
-      padding: 25px;
-      transition: 0.25s ease;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #38bdf8;
+      transform: translateY(-4px);
+      border-color: #93c5fd;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
 
     /* =========================
-       3. NAVIGATION
+       NAVIGATION
     ========================== */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(11, 17, 32, 0.92);
-      border-bottom: 1px solid #1e293b;
+      background-color: rgba(248, 250, 252, 0.95);
+      border-bottom: 1px solid #e2e8f0;
       backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 70px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      color: #ffffff;
+      color: #0f172a;
       font-size: 1.25rem;
-      font-weight: bold;
+      font-weight: 800;
     }
 
     .logo span {
-      color: #38bdf8;
+      color: #1d4ed8;
     }
 
     .nav-links {
-      list-style: none;
       display: flex;
-      gap: 25px;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
     }
 
     .nav-links a {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
+      color: #475569;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: #38bdf8;
+      color: #1d4ed8;
     }
 
     .menu-button {
       display: none;
-      background: none;
       border: none;
-      color: #ffffff;
+      background: none;
+      color: #0f172a;
       font-size: 1.7rem;
       cursor: pointer;
     }
 
     /* =========================
-       4. HERO SECTION
+       HOME SECTION
     ========================== */
 
     .hero {
-      min-height: calc(100vh - 70px);
+      min-height: calc(100vh - 72px);
       display: flex;
       align-items: center;
       padding: 70px 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(59, 130, 246, 0.13),
+          transparent 35%
+        ),
+        #f8fafc;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      align-items: center;
-      gap: 60px;
+    .hero-content {
+      max-width: 850px;
     }
 
     .availability {
-      display: inline-block;
-      padding: 7px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 25px;
-      border: 1px solid #164e63;
+      padding: 8px 13px;
+      border: 1px solid #bfdbfe;
       border-radius: 50px;
-      background-color: rgba(8, 145, 178, 0.1);
-      color: #67e8f9;
-      font-size: 0.85rem;
+      background-color: #eff6ff;
+      color: #1e40af;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #16a34a;
     }
 
     .hero h1 {
-      color: #ffffff;
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      color: #0f172a;
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: 1.02;
+      letter-spacing: -3px;
     }
 
     .hero h1 span {
-      color: #38bdf8;
+      color: #1e3a8a;
     }
 
     .hero-role {
-      color: #cbd5e1;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      color: #334155;
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      font-weight: 700;
     }
 
     .hero-description {
-      color: #94a3b8;
-      max-width: 700px;
-      font-size: 1.05rem;
+      max-width: 760px;
       margin-bottom: 30px;
+      color: #64748b;
+      font-size: 1.08rem;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
 
     .social-links {
       display: flex;
-      gap: 18px;
-      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: #475569;
+      font-weight: 700;
+      transition: color 0.2s ease;
     }
 
     .social-links a:hover {
-      color: #38bdf8;
-    }
-
-    .profile-placeholder {
-      width: 280px;
-      height: 280px;
-      margin: auto;
-      border: 2px solid #38bdf8;
-      border-radius: 50%;
-      background:
-        linear-gradient(135deg, #111827, #164e63);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 5rem;
-      font-weight: bold;
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.18);
+      color: #1d4ed8;
     }
 
     /* =========================
-       5. STATISTICS
+       ABOUT SECTION
     ========================== */
 
-    .stats {
-      padding: 25px 0 70px;
+    .about {
+      background-color: #ffffff;
     }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid #1e293b;
-      border-radius: 14px;
-      overflow: hidden;
-      background-color: #111827;
-    }
-
-    .stat {
-      padding: 25px;
-      text-align: center;
-      border-right: 1px solid #1e293b;
-    }
-
-    .stat:last-child {
-      border-right: none;
-    }
-
-    .stat h3 {
-      color: #38bdf8;
-      font-size: 2rem;
-    }
-
-    .stat p {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       6. ABOUT
-    ========================== */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 50px;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 45px;
       align-items: start;
     }
 
     .about-text p {
-      color: #cbd5e1;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
+      color: #475569;
     }
 
-    .information-list {
+    .about-details {
       display: grid;
-      gap: 15px;
+      gap: 14px;
     }
 
-    .information-item {
+    .detail-box {
       padding: 18px;
-      background-color: #111827;
-      border-left: 3px solid #38bdf8;
+      border-left: 4px solid #1d4ed8;
+      background-color: #f8fafc;
       border-radius: 8px;
     }
 
-    .information-item strong {
+    .detail-box strong {
       display: block;
-      color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
+      color: #0f172a;
     }
 
-    .information-item span {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       7. EXPERIENCE
-    ========================== */
-
-    .timeline {
-      position: relative;
-      margin-left: 10px;
-      padding-left: 35px;
-      border-left: 2px solid #1e293b;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 35px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -43px;
-      top: 7px;
-      width: 14px;
-      height: 14px;
-      background-color: #38bdf8;
-      border: 4px solid #0b1120;
-      border-radius: 50%;
-    }
-
-    .timeline-date {
-      color: #38bdf8;
-      font-size: 0.9rem;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .timeline-item h3 {
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .timeline-company {
-      color: #94a3b8;
-      margin-bottom: 12px;
-    }
-
-    .timeline-item ul {
-      padding-left: 20px;
-      color: #cbd5e1;
+    .detail-box span {
+      color: #64748b;
+      font-size: 0.93rem;
     }
 
     /* =========================
-       8. SKILLS
+       SKILLS SECTION
     ========================== */
 
     .skills-grid {
@@ -396,9 +338,14 @@
       gap: 22px;
     }
 
-    .skill-category h3 {
-      color: #ffffff;
-      margin-bottom: 18px;
+    .skill-card {
+      padding: 26px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 17px;
+      color: #0f172a;
+      font-size: 1.2rem;
     }
 
     .skill-tags {
@@ -409,136 +356,148 @@
 
     .skill-tag {
       padding: 8px 12px;
-      background-color: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 6px;
-      color: #cbd5e1;
-      font-size: 0.9rem;
+      border: 1px solid #dbeafe;
+      border-radius: 7px;
+      background-color: #eff6ff;
+      color: #1e3a8a;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
 
     /* =========================
-       9. PROJECTS
+       CERTIFICATIONS SECTION
     ========================== */
 
-    .projects-grid {
+    .certifications {
+      background-color: #ffffff;
+    }
+
+    .certifications-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .project-number {
-      color: #38bdf8;
-      font-size: 0.85rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .project-card h3 {
-      color: #ffffff;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      color: #94a3b8;
-      margin-bottom: 18px;
-    }
-
-    .project-technologies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .project-technologies span {
-      color: #67e8f9;
-      font-size: 0.8rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .project-links a {
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .project-links a:hover {
-      color: #38bdf8;
-    }
-
-    /* =========================
-       10. CERTIFICATES
-    ========================== */
-
-    .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .certificate-card h3 {
-      color: #ffffff;
-      margin-bottom: 8px;
+    .certification-card {
+      padding: 24px;
     }
 
-    .certificate-card p {
-      color: #94a3b8;
+    .certification-type {
       margin-bottom: 8px;
+      color: #1d4ed8;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .certificate-card span {
-      color: #38bdf8;
-      font-size: 0.85rem;
+    .certification-card h3 {
+      margin-bottom: 7px;
+      color: #0f172a;
+      font-size: 1.12rem;
+    }
+
+    .certification-card p {
+      color: #64748b;
+      font-size: 0.94rem;
     }
 
     /* =========================
-       11. CONTACT
+       BEYOND ENGINEERING
     ========================== */
 
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .beyond-card {
+      padding: 30px;
+    }
+
+    .beyond-card h3 {
+      margin-bottom: 14px;
+      color: #0f172a;
+      font-size: 1.3rem;
+    }
+
+    .beyond-card p {
+      color: #64748b;
+    }
+
+    .activity-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .activity {
+      padding: 8px 12px;
+      border-radius: 7px;
+      background-color: #f1f5f9;
+      color: #334155;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================== */
+
+    .contact {
+      background-color: #ffffff;
+    }
+
     .contact-box {
-      text-align: center;
-      padding: 60px 25px;
+      padding: 60px 30px;
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
       background:
         linear-gradient(
           135deg,
-          rgba(56, 189, 248, 0.12),
-          rgba(17, 24, 39, 0.95)
+          #eff6ff,
+          #ffffff
         );
-      border: 1px solid #1e293b;
-      border-radius: 18px;
+      text-align: center;
     }
 
     .contact-box h2 {
-      color: #ffffff;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 15px;
+      margin-bottom: 16px;
+      color: #0f172a;
+      font-size: clamp(2rem, 5vw, 3.3rem);
     }
 
     .contact-box p {
-      color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto 30px;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: #64748b;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
 
     /* =========================
-       12. FOOTER
+       FOOTER
     ========================== */
 
     footer {
-      padding: 30px 0;
-      border-top: 1px solid #1e293b;
-      text-align: center;
+      padding: 28px 0;
+      border-top: 1px solid #e2e8f0;
+      background-color: #f8fafc;
       color: #64748b;
+      text-align: center;
       font-size: 0.9rem;
     }
 
     /* =========================
-       13. MOBILE RESPONSIVENESS
+       MOBILE DESIGN
     ========================== */
 
     @media (max-width: 800px) {
@@ -549,12 +508,12 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 72px;
         left: 0;
         width: 100%;
-        padding: 25px;
-        background-color: #0b1120;
-        border-bottom: 1px solid #1e293b;
+        padding: 24px;
+        border-bottom: 1px solid #e2e8f0;
+        background-color: #f8fafc;
         flex-direction: column;
         text-align: center;
       }
@@ -563,46 +522,15 @@
         display: flex;
       }
 
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons,
-      .social-links {
-        justify-content: center;
-      }
-
-      .profile-placeholder {
-        width: 220px;
-        height: 220px;
-        font-size: 4rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stat {
-        border-bottom: 1px solid #1e293b;
-      }
-
+      .about-grid,
       .skills-grid,
-      .projects-grid {
+      .certifications-grid,
+      .beyond-grid {
         grid-template-columns: 1fr;
       }
 
-      .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .hero h1 {
+        letter-spacing: -2px;
       }
     }
 
@@ -611,13 +539,32 @@
         padding: 70px 0;
       }
 
-      .stats-grid,
-      .certificates-grid {
-        grid-template-columns: 1fr;
+      .hero {
+        min-height: auto;
+        padding: 85px 0;
       }
 
-      .stat {
-        border-right: none;
+      .hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .hero-buttons,
+      .social-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .contact-links .button {
+        width: 100%;
       }
     }
   </style>
@@ -625,14 +572,10 @@
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
-
   <header>
     <nav class="container">
       <a href="#home" class="logo">
-        YN<span>.</span>
+        Ahmed<span>.</span>
       </a>
 
       <button
@@ -645,10 +588,9 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#beyond">Beyond Engineering</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -656,216 +598,133 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
     <section class="hero" id="home">
-      <div class="container hero-grid">
-
+      <div class="container">
         <div class="hero-content">
-          <p class="availability">
-            ● Open to internships and opportunities
-          </p>
+
+          <div class="availability">
+            <span class="availability-dot"></span>
+            Open to selected opportunities
+          </div>
 
           <h1>
-            Hi, I'm<br>
-            <span>Your Name</span>
+            Ahmed M.<br>
+            <span>Elgammal</span>
           </h1>
 
           <p class="hero-role">
-            Network Engineer · Cybersecurity Student · Developer
+            Communications and IT Engineer
           </p>
 
           <p class="hero-description">
-            I am an engineering student interested in networking,
-            cybersecurity, software, and building practical technical
-            projects. This portfolio presents my skills, experience,
-            certifications, and selected work.
+            Communications and IT Engineering student focused on computer
+            networks, cybersecurity, and network infrastructure. Currently
+            developing advanced networking knowledge through CCNP coursework
+            alongside practical skills in programming and Cisco technologies.
+            Based in Riyadh and open to relocation when needed.
           </p>
 
           <div class="hero-buttons">
-            <a href="#projects" class="button button-primary">
-              View My Work
+            <a href="#about" class="button button-primary">
+              About Me
             </a>
 
             <a href="#contact" class="button button-secondary">
               Contact Me
             </a>
-
-            <!-- Add your CV PDF to the repository later -->
-            <a
-              href="cv.pdf"
-              class="button button-secondary"
-              target="_blank"
-            >
-              Download CV
-            </a>
           </div>
 
           <div class="social-links">
-            <a href="https://www.linkedin.com/" target="_blank">
-              LinkedIn
+            <a
+              href="https://www.linkedin.com/in/ahmedmelgammal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn ↗
             </a>
 
-            <a href="https://github.com/" target="_blank">
-              GitHub
+            <a
+              href="https://github.com/Ahmedmse-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
             </a>
 
-            <a href="mailto:your-email@example.com">
-              Email
+            <a href="mailto:ahmedmselgammal@gmail.com">
+              Email ↗
             </a>
           </div>
-        </div>
 
-        <!-- Replace this later with your personal photo -->
-        <div class="profile-placeholder">
-          YN
         </div>
-
       </div>
     </section>
 
-    <!-- =========================
-         STATISTICS
-    ========================== -->
-
-    <div class="stats">
-      <div class="container stats-grid">
-
-        <div class="stat">
-          <h3>3+</h3>
-          <p>Technical Projects</p>
-        </div>
-
-        <div class="stat">
-          <h3>5+</h3>
-          <p>Technical Skills</p>
-        </div>
-
-        <div class="stat">
-          <h3>2+</h3>
-          <p>Certifications</p>
-        </div>
-
-        <div class="stat">
-          <h3>100%</h3>
-          <p>Passion for Learning</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section id="about">
+    <section class="about" id="about">
       <div class="container">
 
         <p class="section-label">About</p>
-        <h2 class="section-title">Who I Am</h2>
+        <h2 class="section-title">A Little About Me</h2>
 
         <div class="about-grid">
 
           <div class="about-text">
             <p>
-              I am an electrical and electronics engineering student
-              with a strong interest in computer networks, cybersecurity,
-              telecommunications, and software technologies.
+              I am a Communications and IT Engineering student with a strong
+              interest in computer networks, cybersecurity, and network
+              infrastructure. I am currently studying CCNP material while
+              continuing to strengthen my understanding of routing, switching,
+              network security, and practical troubleshooting.
             </p>
 
             <p>
-              I enjoy learning how systems operate, configuring networks,
-              solving engineering problems, and turning theoretical ideas
-              into practical projects.
+              My technical background includes Python, C++, HTML, and Cisco
+              Packet Tracer. My long-term goal is to work in network
+              engineering, cybersecurity, or infrastructure security, where I
+              can combine technical knowledge with disciplined problem-solving.
             </p>
 
             <p>
-              My current goals include developing my networking expertise,
-              earning professional certifications, completing meaningful
-              projects, and gaining industry experience.
+              I value leadership, consistency, and independent thinking. I am
+              comfortable learning on my own, taking responsibility for a task,
+              and working through technical challenges until I reach a clear
+              solution.
             </p>
           </div>
 
-          <div class="information-list">
+          <div class="about-details">
 
-            <div class="information-item">
-              <strong>Education</strong>
-              <span>Your university and degree</span>
-            </div>
-
-            <div class="information-item">
+            <div class="detail-box">
               <strong>Location</strong>
-              <span>Your city and country</span>
+              <span>Riyadh, Saudi Arabia</span>
             </div>
 
-            <div class="information-item">
-              <strong>Specialization</strong>
-              <span>Networking and Cybersecurity</span>
+            <div class="detail-box">
+              <strong>Career Direction</strong>
+              <span>
+                Network Engineering and Cybersecurity
+              </span>
             </div>
 
-            <div class="information-item">
-              <strong>Languages</strong>
-              <span>Arabic and English</span>
+            <div class="detail-box">
+              <strong>Current Focus</strong>
+              <span>
+                CCNP coursework and advanced networking
+              </span>
+            </div>
+
+            <div class="detail-box">
+              <strong>Availability</strong>
+              <span>
+                Internships, remote part-time work, and independent
+                project-based assignments
+              </span>
             </div>
 
           </div>
         </div>
       </div>
     </section>
-
-    <!-- =========================
-         EXPERIENCE
-    ========================== -->
-
-    <section id="experience">
-      <div class="container">
-
-        <p class="section-label">Experience</p>
-        <h2 class="section-title">Experience & Activities</h2>
-
-        <p class="section-description">
-          Internships, training programs, volunteering, university
-          activities, and leadership roles can be included here.
-        </p>
-
-        <div class="timeline">
-
-          <article class="timeline-item">
-            <p class="timeline-date">2026 – Present</p>
-            <h3>Your Current Position or Activity</h3>
-            <p class="timeline-company">
-              Company, university, or organization
-            </p>
-
-            <ul>
-              <li>Describe one responsibility or achievement.</li>
-              <li>Describe a technical skill you developed.</li>
-              <li>Add numbers or measurable results when possible.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <p class="timeline-date">2025 – 2026</p>
-            <h3>Previous Training or Role</h3>
-            <p class="timeline-company">
-              Company or organization
-            </p>
-
-            <ul>
-              <li>Explain what you learned or contributed.</li>
-              <li>Mention the tools or technologies you used.</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         SKILLS
-    ========================== -->
 
     <section id="skills">
       <div class="container">
@@ -874,57 +733,57 @@
         <h2 class="section-title">Technical Skills</h2>
 
         <p class="section-description">
-          We will later replace these examples with your exact technical
-          and professional skills.
+          My current skills are centered around networking, cybersecurity,
+          programming, and practical technical problem-solving.
         </p>
 
         <div class="skills-grid">
 
-          <article class="card skill-category">
+          <article class="card skill-card">
             <h3>Networking</h3>
 
             <div class="skill-tags">
-              <span class="skill-tag">Cisco IOS</span>
+              <span class="skill-tag">Cisco Packet Tracer</span>
               <span class="skill-tag">Routing</span>
               <span class="skill-tag">Switching</span>
-              <span class="skill-tag">VPN</span>
-              <span class="skill-tag">GNS3</span>
-              <span class="skill-tag">PNETLab</span>
+              <span class="skill-tag">Network Fundamentals</span>
+              <span class="skill-tag">Network Troubleshooting</span>
+              <span class="skill-tag">CCNP Coursework</span>
             </div>
           </article>
 
-          <article class="card skill-category">
+          <article class="card skill-card">
             <h3>Cybersecurity</h3>
 
             <div class="skill-tags">
-              <span class="skill-tag">Firewalls</span>
-              <span class="skill-tag">IPsec</span>
               <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Security Fundamentals</span>
               <span class="skill-tag">Access Control</span>
-              <span class="skill-tag">Threat Analysis</span>
+              <span class="skill-tag">VPN Fundamentals</span>
+              <span class="skill-tag">Secure Network Management</span>
             </div>
           </article>
 
-          <article class="card skill-category">
-            <h3>Programming & Tools</h3>
+          <article class="card skill-card">
+            <h3>Programming</h3>
 
             <div class="skill-tags">
               <span class="skill-tag">Python</span>
-              <span class="skill-tag">MATLAB</span>
+              <span class="skill-tag">C++</span>
               <span class="skill-tag">HTML</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Problem-Solving</span>
             </div>
           </article>
 
-          <article class="card skill-category">
-            <h3>Engineering</h3>
+          <article class="card skill-card">
+            <h3>Professional Strengths</h3>
 
             <div class="skill-tags">
-              <span class="skill-tag">CST Studio</span>
-              <span class="skill-tag">LTspice</span>
-              <span class="skill-tag">Microwave Engineering</span>
-              <span class="skill-tag">Communication Systems</span>
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Discipline</span>
+              <span class="skill-tag">Independent Thinking</span>
+              <span class="skill-tag">Self-Learning</span>
+              <span class="skill-tag">Responsibility</span>
             </div>
           </article>
 
@@ -932,198 +791,211 @@
       </div>
     </section>
 
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-
-    <section id="projects">
+    <section class="certifications" id="certifications">
       <div class="container">
 
-        <p class="section-label">Projects</p>
-        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-label">Learning</p>
+        <h2 class="section-title">Certifications and Training</h2>
 
         <p class="section-description">
-          Each project should explain the problem, your work, the
-          technologies used, and the final result.
+          Certifications, professional coursework, and technical training that
+          support my development in networking, cybersecurity, programming,
+          and artificial intelligence.
         </p>
 
-        <div class="projects-grid">
+        <div class="certifications-grid">
 
-          <article class="card project-card">
-            <p class="project-number">PROJECT 01</p>
-
-            <h3>Project Name</h3>
-
+          <article class="card certification-card">
+            <p class="certification-type">Certification</p>
+            <h3>CCNA</h3>
             <p>
-              Write a short explanation of the project, the problem it
-              solves, and your role in building it.
+              Cisco networking certification covering routing, switching,
+              network fundamentals, security, and automation concepts.
             </p>
-
-            <div class="project-technologies">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-
-            <div class="project-links">
-              <a href="#" target="_blank">GitHub ↗</a>
-              <a href="#" target="_blank">Live Demo ↗</a>
-            </div>
           </article>
 
-          <article class="card project-card">
-            <p class="project-number">PROJECT 02</p>
-
-            <h3>Another Project</h3>
-
+          <article class="card certification-card">
+            <p class="certification-type">Coursework</p>
+            <h3>CCNP Coursework</h3>
             <p>
-              Add a university project, networking lab, engineering
-              simulation, application, or technical case study.
+              Advanced study in enterprise networking, network security,
+              infrastructure, and secure network management.
             </p>
-
-            <div class="project-technologies">
-              <span>Cisco</span>
-              <span>GNS3</span>
-              <span>Networking</span>
-            </div>
-
-            <div class="project-links">
-              <a href="#" target="_blank">Details ↗</a>
-            </div>
           </article>
 
-          <article class="card project-card">
-            <p class="project-number">PROJECT 03</p>
-
-            <h3>Engineering Project</h3>
-
+          <article class="card certification-card">
+            <p class="certification-type">Coursework</p>
+            <h3>HCIA-Datacom</h3>
             <p>
-              Explain your design, simulation, measurements, results,
-              and what you personally contributed.
+              Huawei networking coursework focused on data communication,
+              routing, switching, and network technologies.
             </p>
-
-            <div class="project-technologies">
-              <span>CST</span>
-              <span>Microwave</span>
-              <span>Simulation</span>
-            </div>
-
-            <div class="project-links">
-              <a href="#" target="_blank">View Report ↗</a>
-            </div>
           </article>
 
-          <article class="card project-card">
-            <p class="project-number">PROJECT 04</p>
-
-            <h3>Future Project</h3>
-
+          <article class="card certification-card">
+            <p class="certification-type">Coursework</p>
+            <h3>HCIA-AI</h3>
             <p>
-              Keep this card ready for a future cybersecurity,
-              networking, programming, or university project.
+              Huawei artificial intelligence coursework covering foundational
+              AI concepts and technologies.
             </p>
+          </article>
 
-            <div class="project-technologies">
-              <span>Coming Soon</span>
-            </div>
+          <article class="card certification-card">
+            <p class="certification-type">Course</p>
+            <h3>IBM Artificial Intelligence</h3>
+            <p>
+              Introductory artificial intelligence learning focused on core AI
+              concepts and their practical applications.
+            </p>
+          </article>
+
+          <article class="card certification-card">
+            <p class="certification-type">Course</p>
+            <h3>Python — University of Michigan</h3>
+            <p>
+              Python programming coursework focused on programming
+              fundamentals, logic, and practical problem-solving.
+            </p>
+          </article>
+
+          <article class="card certification-card">
+            <p class="certification-type">Internship</p>
+            <h3>Cisco Internship</h3>
+            <p>
+              Technical internship exposure related to networking,
+              communication technologies, and professional development.
+            </p>
+          </article>
+
+          <article class="card certification-card">
+            <p class="certification-type">Internship</p>
+            <h3>Huawei Internship</h3>
+            <p>
+              Technical internship exposure related to telecommunications,
+              networking, and modern information technologies.
+            </p>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         CERTIFICATES
-    ========================== -->
-
-    <section id="certificates">
+    <section id="beyond">
       <div class="container">
 
-        <p class="section-label">Credentials</p>
-        <h2 class="section-title">Certificates & Courses</h2>
+        <p class="section-label">Beyond Engineering</p>
+        <h2 class="section-title">Discipline Outside Technology</h2>
 
         <p class="section-description">
-          Add professional certifications, training programs, and
-          important completed courses.
+          Sport has shaped the way I approach learning, responsibility,
+          leadership, and long-term improvement.
         </p>
 
-        <div class="certificates-grid">
+        <div class="beyond-grid">
 
-          <article class="card certificate-card">
-            <h3>Certificate Name</h3>
-            <p>Issuing organization</p>
-            <span>Completed in 2026</span>
+          <article class="card beyond-card">
+            <h3>Martial Arts and Leadership</h3>
+
+            <p>
+              I am a second-Dan karate practitioner with experience in judo.
+              Martial arts have strengthened my discipline, leadership,
+              composure, and ability to perform consistently under pressure.
+            </p>
+
+            <div class="activity-list">
+              <span class="activity">Karate — 2nd Dan</span>
+              <span class="activity">Judo</span>
+              <span class="activity">Leadership</span>
+              <span class="activity">Discipline</span>
+            </div>
           </article>
 
-          <article class="card certificate-card">
-            <h3>Training Program</h3>
-            <p>Company or institution</p>
-            <span>Completed in 2025</span>
-          </article>
+          <article class="card beyond-card">
+            <h3>Fitness and Performance</h3>
 
-          <article class="card certificate-card">
-            <h3>Future Certification</h3>
-            <p>Certification provider</p>
-            <span>In progress</span>
+            <p>
+              My sporting background also includes weightlifting, calisthenics,
+              swimming, volleyball, and marathon running. I maintain a strong
+              interest in nutrition and physical performance.
+            </p>
+
+            <div class="activity-list">
+              <span class="activity">Weightlifting</span>
+              <span class="activity">Calisthenics</span>
+              <span class="activity">Marathon Running</span>
+              <span class="activity">Swimming</span>
+              <span class="activity">Volleyball</span>
+              <span class="activity">Nutrition</span>
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section id="contact">
+    <section class="contact" id="contact">
       <div class="container">
 
         <div class="contact-box">
+
           <p class="section-label">Contact</p>
 
-          <h2>Let's Build Something Together</h2>
+          <h2>Let’s Connect</h2>
 
           <p>
-            I am open to internships, training opportunities,
-            technical collaborations, and professional connections.
+            I am open to internships, remote part-time opportunities, and
+            independent project-based assignments. I prefer to focus on one
+            independent assignment at a time so I can give it proper attention
+            and deliver high-quality work.
           </p>
 
-          <a
-            href="mailto:your-email@example.com"
-            class="button button-primary"
-          >
-            Send Me an Email
-          </a>
-        </div>
+          <div class="contact-links">
+            <a
+              href="mailto:ahmedmselgammal@gmail.com"
+              class="button button-primary"
+            >
+              Send an Email
+            </a>
 
+            <a
+              href="https://www.linkedin.com/in/ahmedmelgammal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/Ahmedmse-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+            >
+              GitHub
+            </a>
+          </div>
+
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
   <footer>
     <div class="container">
       <p>
-        Designed and built by Your Name ·
-        <span id="currentYear"></span>
+        © <span id="currentYear"></span> Ahmed M. Elgammal
       </p>
     </div>
   </footer>
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
 
   <script>
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
     const navigationItems = document.querySelectorAll(".nav-links a");
 
-    // Opens and closes the navigation menu on mobile
     menuButton.addEventListener("click", function () {
       navLinks.classList.toggle("active");
 
@@ -1134,7 +1006,6 @@
       }
     });
 
-    // Closes the menu after selecting a link
     navigationItems.forEach(function (item) {
       item.addEventListener("click", function () {
         navLinks.classList.remove("active");
@@ -1142,7 +1013,6 @@
       });
     });
 
-    // Automatically displays the current year
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
   </script>

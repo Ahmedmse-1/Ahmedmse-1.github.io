@@ -17,15 +17,15 @@
 
   <style>
     :root {
-      --background: #eef1f5;
-      --background-dark: #e4e9f0;
-      --card: #f8fafc;
+      --background: #f4f0e8;
+      --background-dark: #ebe5da;
+      --card: #faf8f3;
       --navy: #102a43;
       --navy-light: #243b53;
       --blue: #2457a7;
       --blue-light: #dce8f8;
       --muted: #52667a;
-      --border: #cfd8e3;
+      --border: #d6cec1;
       --white: #ffffff;
       --green: #18864b;
       --shadow: 0 14px 35px rgba(16, 42, 67, 0.08);
@@ -162,7 +162,7 @@
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid rgba(16, 42, 67, 0.12);
-      background-color: rgba(238, 241, 245, 0.94);
+      background-color: rgba(244, 240, 232, 0.94);
       backdrop-filter: blur(14px);
     }
 
@@ -242,7 +242,7 @@
       padding: 8px 14px;
       border: 1px solid #b7c5d5;
       border-radius: 100px;
-      background-color: rgba(248, 250, 252, 0.65);
+      background-color: rgba(250, 248, 243, 0.72);
       color: var(--navy-light);
       align-items: center;
       gap: 9px;
@@ -315,7 +315,7 @@
       padding: 30px;
       border: 1px solid #b8c5d3;
       border-radius: 18px;
-      background-color: rgba(248, 250, 252, 0.7);
+      background-color: rgba(250, 248, 243, 0.72);
       box-shadow: var(--shadow);
     }
 
@@ -535,7 +535,7 @@
       padding: 7px 11px;
       border: 1px solid #c4cfdb;
       border-radius: 6px;
-      background-color: #e9edf2;
+      background-color: #eee9e1;
       color: var(--navy);
       font-size: 0.83rem;
       font-weight: 700;
@@ -563,36 +563,106 @@
       line-height: 1.15;
     }
 
-    .contact p {
+    .contact-introduction {
       max-width: 700px;
-      margin: 0 auto 29px;
+      margin: 0 auto 34px;
       color: #d8e2ec;
     }
 
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
+    .contact-form {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      background-color: rgba(255, 255, 255, 0.07);
+      text-align: left;
     }
 
-    .contact .button-primary {
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #7089a4;
+      border-radius: 8px;
+      outline: none;
       background-color: var(--white);
       color: var(--navy);
+      font: inherit;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .contact .button-primary:hover {
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #76899b;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #9fc5ff;
+      box-shadow: 0 0 0 3px rgba(159, 197, 255, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      border: none;
+      background-color: var(--white);
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    .form-submit:hover {
       background-color: #dce8f8;
     }
 
-    .contact .button-outline {
-      border-color: #7089a4;
-      color: var(--white);
+    .form-note {
+      margin-top: 14px;
+      color: #b9c9da;
+      font-size: 0.8rem;
+      text-align: center;
     }
 
-    .contact .button-outline:hover {
-      border-color: var(--white);
-      background-color: rgba(255, 255, 255, 0.08);
+    .hidden-field {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .contact-profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 27px;
+    }
+
+    .contact-profile-links a {
+      color: #d8e2ec;
+      font-size: 0.9rem;
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+
+    .contact-profile-links a:hover {
+      color: var(--white);
     }
 
     footer {
@@ -683,12 +753,13 @@
         padding: 23px;
       }
 
-      .contact-links {
-        flex-direction: column;
+      .contact-form {
+        padding: 21px;
       }
 
-      .contact-links .button {
-        width: 100%;
+      .contact-profile-links {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -780,7 +851,7 @@
               GitHub ↗
             </a>
 
-            <a href="mailto:ahmedmselgammal@gmail.com">
+            <a href="#contact">
               Email ↗
             </a>
 
@@ -1193,40 +1264,96 @@
             Open to focused opportunities
           </h2>
 
-          <p>
+          <p class="contact-introduction">
             I am open to internships, remote part-time opportunities and
             independent project-based assignments. For independent work, I
             prefer to focus on one assignment at a time so I can give it the
             attention it requires and deliver strong results.
           </p>
 
-          <div class="contact-links">
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/ahmedmselgammal@gmail.com"
+            method="POST"
+          >
 
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedmselgammal@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button button-primary"
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from Ahmed M. Elgammal's portfolio"
             >
-              Email Me
-            </a>
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+            <input
+              type="text"
+              name="_honey"
+              class="hidden-field"
+              tabindex="-1"
+              autocomplete="off"
+            >
+
+            <div class="form-group">
+              <label for="visitorEmail">
+                Your Email
+              </label>
+
+              <input
+                type="email"
+                id="visitorEmail"
+                name="email"
+                placeholder="name@example.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="visitorMessage">
+                Your Message
+              </label>
+
+              <textarea
+                id="visitorMessage"
+                name="message"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="button form-submit"
+            >
+              Send Message
+            </button>
+
+            <p class="form-note">
+              Your email address will only be used to reply to your message.
+            </p>
+
+          </form>
+
+          <div class="contact-profile-links">
 
             <a
               href="https://www.linkedin.com/in/ahmedmelgammal"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-outline"
             >
-              LinkedIn
+              LinkedIn ↗
             </a>
 
             <a
               href="https://github.com/Ahmedmse-1"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-outline"
             >
-              GitHub
+              GitHub ↗
             </a>
 
           </div>
